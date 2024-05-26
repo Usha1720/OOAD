@@ -1,0 +1,116 @@
+LOGIN FORM: 
+Option Explicit 
+ 
+Public LoginSucceeded As Boolean 
+Private Sub cmdCancel_Click() 
+LoginSucceeded = False 
+End 
+End Sub 
+ 
+Private Sub cmdOK_Click() 
+ 
+If txtUserName = "mca" Then 
+If txtPassword = "mca" Then 
+LoginSucceeded = True 
+Form1.Show 
+Me.Hide 
+Else 
+ 
+MsgBox "Invalid Password, try again!", vbInformation, "Login" 
+txtPassword.SetFocus 
+End If 
+Else 
+MsgBox "Invalid Username, try again!", vbInformation, "Login" 
+End If 
+ 
+End Sub 
+ 
+Form 1: 
+ 
+Private Sub Option2_Click() 
+Form2.Show 
+Me.Hide 
+End Sub 
+Private Sub Option3_Click() 
+Form5.Show 
+Me.Hide 
+End Sub 
+Private Sub Option4_Click() 
+Form6.Show 
+Me.Hide 
+End Sub 
+Form 2: 
+Dim a As Integer 
+ 
+Private Sub Command1_Click() 
+Text1.Text = "" 
+If Option2.Value = True Then 
+Text1.Text = Val(Text1.Text) + 10 
+ 
+Else 
+ 
+Text1.Text = Val(Text1.Text) + 0 
+End If 
+Frame2.Visible = True 
+Frame1.Visible = False 
+End Sub 
+Private Sub Command2_Click() 
+If Option7.Value = True Then 
+Text1.Text = Val(Text1.Text) + 10 
+Else 
+Text1.Text = Val(Text1.Text) + 0 
+End If 
+Form3.Show 
+Me.Hide 
+End Sub 
+Private Sub Form_Load() 
+Frame2.Visible = False 
+End Sub 
+Private Sub Timer1_Timer() 
+Me.Hide 
+Form1.Show 
+End Sub Form 3: 
+Private Sub Command1_Click() 
+If Option4.Value = True Then 
+Text1.Text = Val(Text1.Text) + 10 
+Else 
+Text1.Text = Val(Text1.Text) + 0 
+End If 
+Frame2.Visible = True 
+Frame1.Visible = False 
+End Sub 
+Private Sub Command2_Click() 
+If Option13.Value = True Then 
+Text1.Text = Val(Text1.Text) + 10 Else 
+ 
+Text1.Text = Val(Text1.Text) + 0 
+End If 
+Form8.Show 
+Me.Hide 
+End Sub 
+Private Sub Form_Load() 
+Frame2.Visible = False 
+End Sub 
+RESULT FORM: 
+ 
+Dim db As Database Dim rs As Recordset Private Sub Command1_Click() rs(0) = lable2.Caption rs(1) = Text1.Text rs(2) = Text2.Text 
+AddNew 
+End Sub 
+Private Sub Command2_Click() 
+End 
+End Sub 
+ 
+Private Sub Command3_Click() 
+ 
+If Form1.Option2.Value = True Then 
+ 
+Label2.Caption = Val(Form3.Text1.Text) + Val(Form2.Text1.Text) 
+ElseIf Form1.Option3.Value = True Then 
+End If 
+End Sub 
+Private Sub Form_Load() 
+MDIForm1.Label1.Caption = "" 
+MDIForm1.Picture1.Visible = False 
+Set db = OpenDatabase("D:\PROJECTS\tittu pro\RESULT.MDB") 
+Set rs = db.OpenRecordset("res") 
+End Sub 
