@@ -1,0 +1,94 @@
+FORM3  
+Private Sub Command1_Click()  
+Adodc1.Recordset.AddNew  
+End Sub  
+Private Sub Command2_Click()  
+Adodc1.Recordset.MoveNext  
+End Sub  
+Private Sub Command3_Click()  
+Adodc1.Recordset.MovePrevious  
+End Sub  
+Private Sub Command4_Click()  
+Adodc1.Recordset.MoveLast  
+End Sub  
+Private Sub Command5_Click()  
+Adodc1.Recordset.Update  
+End Sub  
+Private Sub Command6_Click()  
+Unload Me  
+End Sub  
+Private Sub Command7_Click()  
+Adodc1.Recordset.Delete  
+End Sub  
+Private Sub Command8_Click()  
+Form3.Show  
+End Sub  
+ 
+ 
+ 
+FORM1  
+Private Sub Command1_Click()   
+If txtus.Text = "admin" Then  
+If txtpass.Text = "admin" Then  
+MsgBox "login sucess"  
+Form1.Show  
+Unload Me  
+Else  
+MsgBox "The password you entered is incorrect.Please retype the password.", vbCritical,  
+"Wrong Entry"  txtpass.Text = ""  
+End If  
+Else  
+MsgBox "The username and password you entered is incorrect.Please retype the username and password.", vbCritical, "Wrong Entry"  
+txtus.Text = ""  txtpass.Text = ""  
+End If  
+End Sub  
+Private Sub Command2_Click()  
+Unload Me  
+End Sub  
+ 
+ 
+ 
+ 
+FORM5  
+Private Sub Command1_Click()  
+Adodc2.Recordset.AddNew  
+End Sub  
+Private Sub Command2_Click()  
+Adodc2.Recordset.MoveNext  
+End Sub  
+Private Sub Command3_Click()  
+Adodc2.Recordset.MovePrevious  
+End Sub  
+Private Sub Command4_Click()  
+Adodc2.Recordset.MoveLast  
+End Sub  
+Private Sub Command5_Click()  
+Adodc2.Recordset.Update  
+End Sub  
+Private Sub Command6_Click()  
+Adodc2.Recordset.Delete  
+End Sub  
+Private Sub Command7_Click()  
+Unload Me  
+End Sub  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
